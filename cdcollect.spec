@@ -2,20 +2,20 @@ Summary:	CDCollect - a simple CD catalog for GNOME
 Summary(pl.UTF-8):	CDCollect - prosty programem do katalogowania płyt CD napisany dla GNOME
 Name:		cdcollect
 Version:	0.6.0
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/cdcollect/%{name}-%{version}.tar.bz2
 # Source0-md5:	33f71604b9dfb84497b4bc2fce69e89b
 URL:		http://cdcollect.sourceforge.net/
-BuildRequires:	dotnet-gnome-sharp2-devel >= 2.8.0
+BuildRequires:	dotnet-gnome-sharp-devel >= 2.8.0
 BuildRequires:	dotnet-gtk-sharp2-devel >= 2.8.0
 BuildRequires:	mono-csharp >= 1.1.17
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.198
 BuildRequires:	sqlite3-devel >= 3.3
 Requires(post,preun):	GConf2
-Requires:	dotnet-gnome-sharp2 >= 2.8.0
+Requires:	dotnet-gnome-sharp >= 2.8.0
 Requires:	dotnet-gtk-sharp2 >= 2.8.0
 Requires:	mono >= 1.1.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
