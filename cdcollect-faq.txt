@@ -1,0 +1,61 @@
+Frecuently Asked Questions for CDCollect
+
+What are information plugins?
+
+Information plugins are external programs that CDCollect calls for specific
+mime types. The text output of the external program is associated as metadata
+information for the imported file of the CD/DVD.
+
+How can I create new information plugins?
+
+Go to Edit/Plugins menu item and then click on the Information tab. Click on
+the Add button and introduce all needed information for the plugin:
+
+  • Mime: mime-type of the information plugin. Files with this mime type will
+    be associated with the plugin. (To see a file mime-type type this on a
+    terminal "file -i name_on_disk")
+  • Program: Path of the information plugin program. The output of this program
+    will be associated to the imported file.
+  • Arguments: Arguments to the information plugin. At least you should use:
+      □ The string "{0}" to be replaced for the input filename
+
+What are compression plugins?
+
+Compression plugins are external programs that CDCollect calls for specific
+mime types. The external program will be run to uncompressed the contents of
+the file and they will be added to the CDCollect database when importing a CD/
+DVD.
+
+How can I create new compression plugins?
+
+Go to Edit/Plugins menu item and then click on the Compression tab. Click on
+the Add button and introduce all needed information for the plugin:
+
+  • Mime: mime-type of the compression plugin. Files with this mime type will
+    be uncompressed and contents will be added to the CD/DVD. (To see a file
+    mime-type type this on a terminal "file -i name_on_disk")
+  • Program: Path of the compression plugin program.
+  • Arguments: Arguments to the information plugin. At least you should use:
+      □ The string "{0}" to be replaced for the input filename
+      □ The string "{1}" to be replaced by the temporal directory to
+        uncompressed files
+
+How can I convert my database from SQLITE version 2.8 to 3?
+
+CDCollect 0.6.0 uses sqlite3 as the internal database format. To convert your
+existing database to the new format follow this simple steps:
+
+  • Install both sqlite command-line tools for version 2.8 and 3
+      □ In debian/ubuntu install packages 'sqlite' and 'sqlite3'
+      □ In fedora install packages (any fedora users using cdcollect???)
+      □ In suse install packages (any suse users using cdcollect??)
+  • Open a console terminal and type the following commands:
+      □ cd $HOME/.gnome2/cdcollect
+      □ cp cds.db cds.db_backup
+      □ sqlite cds.db .dump | sqlite3 cds3.db
+      □ rm cds.db
+  • That's it, open CDCollect and enjoy! For more information please visit
+    sqlite homepage in section 'New File Formar'.
+
+
+Last Modified: Fri, 24th Nov, 2006. Send any comments to jrhbcn@gmail.com.
